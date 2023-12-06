@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
+
 import Hero from "../components/Hero"
 import CategoryList from '../components/CategoryList'
 import Knowlege from '../components/Knowlege'
 
+
 const DailyKnowlge = () => {
     const [category,setCategory]=useState("")
     const [urlText,setUrlText]=useState("");
-    function alertMessage(){
-        alert(category)
-    }
+  
   return (
     <main>
         <div className='main'>
@@ -16,7 +16,9 @@ const DailyKnowlge = () => {
         </div>
         <div className='relative z-10 flex 
         justify-center items-center 
-        flex-col max-w-7xl mx-auto sm:px-16 px-6'>
+        flex-col max-w-7xl mx-auto sm:px-16 px-6'
+        
+        >
           <Hero
            heading="Get Daily Knowlege About "
            brand="The UN global goals for sustainable development."

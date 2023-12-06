@@ -22,10 +22,10 @@ const Navbar = () => {
               <a href="/">Url summary</a>
             </li>
             <li className="mx-4 font-satoshi hover:text-orange-300">
-              <a href="text-to-speech">Text-to-speech</a>
+              <a href="/text-to-speech">Text-to-speech</a>
             </li>
             <li className="mx-4 font-satoshi hover:text-orange-300">
-              <a href="daily-knowlege">Daily Knowlege</a>
+              <a href="/daily-knowlege">Daily Knowlege</a>
             </li>
           </ul>
 
@@ -36,7 +36,7 @@ const Navbar = () => {
      transition-all hover:bg-white
       hover:text-black"
             type="button"
-            onClick={() => window.open("https:github.com/Gaurav01Kumar")}
+            onClick={() => window.open("https://github.com/Gaurav01Kumar/AI-Webpage")}
           >
             Github
           </button>
