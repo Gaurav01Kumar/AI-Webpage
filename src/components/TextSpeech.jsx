@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { loader } from '../assets/assets';
+import { motion } from "framer-motion"
 const rapidKey=import.meta.env.VITE_RAPID_SPEECH_KEY;
 const rapidUrl=import.meta.env.VITE_RAPID_SPEECH_URL;
 const rapidSpeechHost=import.meta.env.VITE_RAPID_SPEECH_HOST
@@ -45,7 +46,12 @@ const TextSpeech = () => {
 
  
   return (
-    <section className='mt-16 w-full max-w-xl'>
+    <motion.section className='mt-16 w-full max-w-xl'
+    
+    initial={{y:200,opacity:0}}
+    animate={{y:0,opacity:1}}
+    transition={{delay:2,y:{duration:2},ease:"easeIn"}}
+    >
         <div
         className='flex flex-col w-full gap-2'
         >
@@ -103,7 +109,7 @@ const TextSpeech = () => {
         }
         </div>
         </div>
-    </section>
+    </motion.section>
   )
 }
 
