@@ -7,6 +7,7 @@ import { store } from "./services/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Texttospech from "./pages/Text-to-spech.jsx";
 import DailyKnowlge from "./pages/daily.knowlge.jsx";
+import TaskManager from "./pages/TaskManager.jsx";
 const router=createBrowserRouter([
   {
     path:"/",
@@ -23,6 +24,10 @@ const router=createBrowserRouter([
       {
         path:"/daily-knowlege",
         element:<DailyKnowlge />
+      },
+      {
+        path:"/task-manager",
+        element:<TaskManager/>
       }
     ]
   }

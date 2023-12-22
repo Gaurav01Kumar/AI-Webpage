@@ -30,16 +30,35 @@ const Navbar = () => {
           </ul>
 
           <button
-            className="rounded-full 
-    border border-black bg-black
-     py-1.5 px-5 text-sm text-white 
-     transition-all hover:bg-white
-      hover:text-black"
+            className=" btns" 
             type="button"
-            onClick={() => window.open("https://github.com/Gaurav01Kumar/AI-Webpage")}
+            
           >
-            Github
+           
+           
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>Sign up</p>
           </button>
+          
+          <button
+            className=" btns" 
+            type="button"
+            
+          >
+           
+           
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>Sign In</p>
+          </button>
+
         </div>
       </nav>
     </div>
