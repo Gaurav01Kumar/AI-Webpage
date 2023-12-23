@@ -280,14 +280,27 @@ const TaskManager = () => {
 
 // form component for add new custom input
 import { motion, AnimatePresence } from "framer-motion";
-import { FormControl,
-   FormLabel ,
-   FormErrorMessage,
-   Input,
-   FormHelperText
-  } from "@chakra-ui/react";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  Input,
+  FormHelperText,
+  Box,
+} from "@chakra-ui/react";
+import {
+  Step,
+  StepDescription,
+  StepIcon,
+  StepIndicator,
+  StepNumber,
+  StepSeparator,
+  StepStatus,
+  StepTitle,
+  Stepper,
+  useSteps,
+} from "@chakra-ui/react";
 
-  
 const NewCustomChallengeForm = ({ opened, setOpened }) => {
   const variants = {
     open: {
@@ -305,9 +318,20 @@ const NewCustomChallengeForm = ({ opened, setOpened }) => {
       },
     },
   };
-  const [input,setInput]=useState('')
- const handleChangeInput=(e)=>setInput(e.target.value);
- const isError=input===''
+  const [input, setInput] = useState("");
+  const handleChangeInput = (e) => setInput(e.target.value);
+  const isError = input === "";
+  const steps = [
+    { title: "First", description: "Info" },
+    { title: "Second", description: "Date & Time" },
+    { title: "Third", description: "Finish" },
+  ];
+
+  const { activeStep } = useSteps({
+    index: 1,
+    count: steps.length,
+  });
+
   return (
     <>
       {opened ? (
@@ -330,22 +354,41 @@ const NewCustomChallengeForm = ({ opened, setOpened }) => {
             </h3>
           </div>
           <div
-            className="   overflow-hidden
+            className="  
            flex flex-col z-10
           "
           >
-           
-             <FormControl isInvalid={isError}>
-                  <FormLabel>Challenge Name</FormLabel>
-                  <Input type="email" />
-                  {
-                    isError?
-                    <FormHelperText>
-                        Write your challenge name
-                    </FormHelperText>
-                    :<FormErrorMessage>Name is required</FormErrorMessage>
-                  }
-             </FormControl>
+            <Stepper
+            className="flex justify-around p-2 border"
+            index={activeStep}>
+              {steps.map((step, index) => (
+                <Step key={index}>
+                  <StepIndicator>
+                    <StepStatus 
+                      complete={<StepIcon />}
+                      incomplete={<StepNumber />}
+                      active={<StepNumber />}
+                    />
+                  </StepIndicator>
+
+                  <Box flexShrink="0" className="flex w-100">
+                    <StepTitle className="">{step.title}</StepTitle>
+                    <StepDescription>{step.description}</StepDescription>
+                  </Box>
+
+                  <StepSeparator />
+                </Step>
+              ))}
+            </Stepper>
+            <FormControl isInvalid={isError}>
+              <FormLabel>Challenge Name</FormLabel>
+              <Input type="email" />
+              {isError ? (
+                <FormHelperText>Write your challenge name</FormHelperText>
+              ) : (
+                <FormErrorMessage>Name is required</FormErrorMessage>
+              )}
+            </FormControl>
           </div>
         </motion.div>
       ) : null}
