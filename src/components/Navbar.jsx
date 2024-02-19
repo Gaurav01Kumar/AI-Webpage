@@ -27,19 +27,41 @@ const Navbar = () => {
             <li className="mx-4 font-satoshi hover:text-orange-300">
               <a href="/daily-knowlege">Daily Knowlege</a>
             </li>
+            <li className="mx-4 font-satoshi hover:text-orange-300">
+              <a href="/chat">chat with Ai</a>
+            </li>
           </ul>
 
           <button
-            className="rounded-full 
-    border border-black bg-black
-     py-1.5 px-5 text-sm text-white 
-     transition-all hover:bg-white
-      hover:text-black"
+            className=" btns" 
             type="button"
-            onClick={() => window.open("https://github.com/Gaurav01Kumar/AI-Webpage")}
+            
           >
-            Github
+           
+           
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>Sign up</p>
           </button>
+          
+          <button
+            className=" btns" 
+            type="button"
+            
+          >
+           
+           
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>Sign In</p>
+          </button>
+
         </div>
       </nav>
     </div>
