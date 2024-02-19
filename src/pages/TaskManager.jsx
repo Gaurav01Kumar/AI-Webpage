@@ -359,12 +359,13 @@ const NewCustomChallengeForm = ({ opened, setOpened }) => {
           "
           >
             <Stepper
-            className="flex justify-around p-2 border"
-            index={activeStep}>
+              className="flex justify-around p-2 border"
+              index={activeStep}
+            >
               {steps.map((step, index) => (
                 <Step key={index}>
                   <StepIndicator>
-                    <StepStatus 
+                    <StepStatus
                       complete={<StepIcon />}
                       incomplete={<StepNumber />}
                       active={<StepNumber />}
@@ -380,15 +381,43 @@ const NewCustomChallengeForm = ({ opened, setOpened }) => {
                 </Step>
               ))}
             </Stepper>
-            <FormControl isInvalid={isError}>
-              <FormLabel>Challenge Name</FormLabel>
-              <Input type="email" />
-              {isError ? (
-                <FormHelperText>Write your challenge name</FormHelperText>
-              ) : (
-                <FormErrorMessage>Name is required</FormErrorMessage>
-              )}
-            </FormControl>
+
+            <form className="flex">
+              <FormControl
+                isInvalid={isError}
+                className="flex gap-10 flex-col mt-10 w-full items-center justify-center"
+              >
+                <div className="flex gap-10">
+                  <FormLabel className="text-xl"> Challenge Name :</FormLabel>
+                  <Input
+                    type="email"
+                    className="border p-2.5 shadow-lg w-[350px] outline-none
+                     peer-focus-visible rounded-sm border-spacing-12 "
+                  />
+                </div>
+
+                <div className="flex gap-10">
+                  <button
+                    type="button"
+                    className="p-2 border shadow
+                   hover:bg-black hover:text-white rounded 
+                    px-10 text-xl
+                  "
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    className="p-2 border shadow
+                  bg-cyan-500 text-white rounded 
+                   px-10 text-xl
+                 "
+                  >
+                    Next
+                  </button>
+                </div>
+              </FormControl>
+            </form>
           </div>
         </motion.div>
       ) : null}

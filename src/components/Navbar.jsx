@@ -27,6 +27,9 @@ const Navbar = () => {
             <li className="mx-4 font-satoshi hover:text-orange-300">
               <a href="/daily-knowlege">Daily Knowlege</a>
             </li>
+            <li className="mx-4 font-satoshi hover:text-orange-300">
+              <a href="/chat">chat with Ai</a>
+            </li>
           </ul>
 
           <button
