@@ -2,7 +2,7 @@ import React from 'react'
 
 const AiChat = () => {
   return (
-    <div>AiChat</div>
+    <div>AiChat hi </div>
   )
 }
 
